@@ -27,4 +27,3 @@ class UserManager(BaseUserManager):
         return user
 
 
-#User.objects.create_superuser(email="")
