@@ -1,9 +1,9 @@
 from rest_framework.routers import DefaultRouter, SimpleRouter
-from users.views import UserViewSet
+from doctors.views import DoctorViewSet
 
 
 router = SimpleRouter()
-router.register('doctors', UserViewSet)
+router.register('doctors', DoctorViewSet)
 
 urlpatterns = []
 urlpatterns += router.urls

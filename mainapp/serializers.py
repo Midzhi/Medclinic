@@ -2,17 +2,29 @@ from rest_framework import serializers
 from mainapp.models import City, Speciality
 
 
-class AppointmentSerializer(serializers.ModelSerializer):
-    author_name = serializers.ReadOnlyField(source='email.username')
+class CitySerializer(serializers.ModelSerializer):
+    city = serializers.ReadOnlyField(source='name')
 
     class Meta:
-        model = [City, Speciality]
+        model = City
         fields = (
             'id',
             'name',
-
         )
         read_only_fields = (
             'name',
         )
 
+
+class SpecialitySerializer(serializers.ModelSerializer):
+    speciality = serializers.ReadOnlyField(source='name')
+
+    class Meta:
+        model = Speciality
+        fields = (
+            'id',
+            'name',
+        )
+        read_only_fields = (
+            'name',
+        )
