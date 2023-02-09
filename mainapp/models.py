@@ -21,3 +21,7 @@ class Speciality(models.Model):
     class Meta:
         verbose_name = "Специалист"
         verbose_name_plural = "Специалисты"
+
+
+class Appointment(models.Model):
+    pass

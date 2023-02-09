@@ -1,9 +1,12 @@
-from rest_framework.routers import DefaultRouter, SimpleRouter
-from doctors.views import DoctorViewSet
+from django.urls import path
+
+from doctors.views import (
+    DoctorListAPIView,
+    DoctorDetailAPIView
+)
 
 
-router = SimpleRouter()
-router.register('doctors', DoctorViewSet)
-
-urlpatterns = []
-urlpatterns += router.urls
+urlpatterns = [
+    path('doctors/<int:pk>/', DoctorDetailAPIView.as_view(), name='doctor-detail'),
+    path('doctors/', DoctorListAPIView.as_view(), name='doctor-list')
+]
