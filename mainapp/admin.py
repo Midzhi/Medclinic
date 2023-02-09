@@ -1,5 +1,5 @@
 from django.contrib import admin
 
-from mainapp.models import City, Speciality
+from mainapp.models import City, Speciality, Patient
 
-admin.site.register([City, Speciality])
+admin.site.register([City, Speciality, Patient])

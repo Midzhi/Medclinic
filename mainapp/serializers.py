@@ -1,5 +1,5 @@
 from rest_framework import serializers
-from mainapp.models import City, Speciality
+from mainapp.models import City, Speciality, Patient
 
 
 class CitySerializer(serializers.ModelSerializer):
@@ -19,4 +19,17 @@ class SpecialitySerializer(serializers.ModelSerializer):
         fields = (
             'id',
             'name'
+        )
+
+
+class PatientSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = Patient
+        fields = (
+            'id',
+            'name',
+            'phone_number',
+            'email',
+            'date_created',
+            'date_updated',
         )

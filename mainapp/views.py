@@ -1,13 +1,7 @@
 from rest_framework import viewsets
-from rest_framework.parsers import FormParser, MultiPartParser
-
-from doctors.models import Doctor
-from doctors.serializers import DoctorSerializer
 from mainapp.filters import CityFilter, SpecialityFilter
-from mainapp.models import City, Speciality
-from mainapp.serializers import CitySerializer, SpecialitySerializer
-from rest_framework import permissions
-from mainapp.permissions import IsOwnerOrAdminReadOnly
+from mainapp.models import City, Speciality, Patient
+from mainapp.serializers import CitySerializer, SpecialitySerializer, PatientSerializer
 from django_filters.rest_framework import DjangoFilterBackend
 
 
@@ -24,6 +18,7 @@ class CityViewSet(viewsets.ModelViewSet):
     def perform_create(self, serializer):
         serializer.save(name=self.request.name)
 
+
 class SpecialityViewSet(viewsets.ModelViewSet):
     queryset = Speciality.objects.all()
     serializer_class = SpecialitySerializer
@@ -37,3 +32,7 @@ class SpecialityViewSet(viewsets.ModelViewSet):
     def perform_create(self, serializer):
         serializer.save(name=self.request.name)
 
+
+class PatientViewSet(viewsets.ModelViewSet):
+    queryset = Patient.objects.all()
+    serializer_class = PatientSerializer

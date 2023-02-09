@@ -9,7 +9,7 @@ from users.managers import UserManager
 
 class User(AbstractBaseUser, PermissionsMixin):
     email = models.EmailField(
-        verbose_name="email address",
+        verbose_name="Ваша почта",
         max_length=255,
         unique=True,
     )
@@ -23,7 +23,8 @@ class User(AbstractBaseUser, PermissionsMixin):
             message='phone number must be digits',
             code='invalid phone number'
         )],
-        max_length=15
+        max_length=15,
+        verbose_name='Ваше телефон'
     )
     is_staff = models.BooleanField(default=True)
     is_active = models.BooleanField(default=True)

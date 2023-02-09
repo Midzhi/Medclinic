@@ -7,8 +7,8 @@ from mainapp.models import City, Speciality
 
 class Doctor(models.Model):
     user = models.OneToOneField(User, on_delete=models.CASCADE, related_name="doctor")
-    city = models.ForeignKey(City, on_delete=models.PROTECT, related_name="doctors")
-    speciality = models.ForeignKey(Speciality, on_delete=models.PROTECT, related_name="doctors")
+    city = models.ForeignKey(City, on_delete=models.PROTECT, related_name="doctors", verbose_name='Город')
+    speciality = models.ForeignKey(Speciality, on_delete=models.PROTECT, related_name="doctors", verbose_name='Специальность')
     working_place = models.CharField(max_length=255, verbose_name="Место работы")
     propic = models.ImageField(upload_to="propics/", null=True, blank=True, verbose_name="Фотография")
 
