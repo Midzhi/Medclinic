@@ -1,7 +1,7 @@
 from rest_framework import viewsets
 from mainapp.filters import CityFilter, SpecialityFilter
-from mainapp.models import City, Speciality, Patient
-from mainapp.serializers import CitySerializer, SpecialitySerializer, PatientSerializer
+from mainapp.models import City, Speciality
+from mainapp.serializers import CitySerializer, SpecialitySerializer
 from django_filters.rest_framework import DjangoFilterBackend
 
 
@@ -31,8 +31,3 @@ class SpecialityViewSet(viewsets.ModelViewSet):
 
     def perform_create(self, serializer):
         serializer.save(name=self.request.name)
-
-
-class PatientViewSet(viewsets.ModelViewSet):
-    queryset = Patient.objects.all()
-    serializer_class = PatientSerializer

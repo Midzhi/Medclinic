@@ -1,5 +1,5 @@
 from rest_framework import serializers
-from mainapp.models import City, Speciality, Patient
+from mainapp.models import City, Speciality
 
 
 class CitySerializer(serializers.ModelSerializer):
@@ -22,14 +22,14 @@ class SpecialitySerializer(serializers.ModelSerializer):
         )
 
 
-class PatientSerializer(serializers.ModelSerializer):
-    class Meta:
-        model = Patient
-        fields = (
-            'id',
-            'name',
-            'phone_number',
-            'email',
-            'date_created',
-            'date_updated',
-        )
+# class AppointmentSerializer(serializers.ModelSerializer):
+#
+#     class Meta:
+#         model = Appointment
+#         field = (
+#             'id',
+#             'date',
+#             'start_time',
+#             'end_time',
+#             'appointment'
+#         )

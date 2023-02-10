@@ -16,7 +16,7 @@ class DoctorListAPIView(ListAPIView):
     serializer_class = DoctorSecondSerializer
 
 
-class DoctorDetailAPIView(RetrieveUpdateDestroyAPIView): #TODO delete doctors POST request using generics or APIView
+class DoctorDetailAPIView(RetrieveUpdateDestroyAPIView):
     queryset = Doctor.objects.all()
     serializer_class = DoctorSecondSerializer
     parser_classes = [MultiPartParser, FormParser]
