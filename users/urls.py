@@ -7,6 +7,6 @@ router = SimpleRouter()
 router.register('users', UserViewSet)
 
 urlpatterns = [
-    path('me/', UserMeAPIView.as_view(), name='me'),
+    path('users/me/', UserMeAPIView.as_view(), name='me'),
 ]
 urlpatterns += router.urls

@@ -24,8 +24,3 @@ class Speciality(models.Model):
         verbose_name_plural = "Специалисты"
 
 
-# class Appointment(models.Model):
-#     date = models.DateField()
-#     start_time = models.TimeField()
-#     end_time = models.TimeField()
-#     appointment = models.ForeignKey(Patient, on_delete=models.CASCADE)

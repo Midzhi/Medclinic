@@ -20,16 +20,3 @@ class SpecialitySerializer(serializers.ModelSerializer):
             'id',
             'name'
         )
-
-
-# class AppointmentSerializer(serializers.ModelSerializer):
-#
-#     class Meta:
-#         model = Appointment
-#         field = (
-#             'id',
-#             'date',
-#             'start_time',
-#             'end_time',
-#             'appointment'
-#         )
