@@ -1,6 +1,6 @@
 from django.db import models
 
-from django.contrib.auth.models import AbstractBaseUser, AbstractUser
+from django.contrib.auth.models import AbstractBaseUser
 from django.core.validators import RegexValidator
 from django.contrib.auth.models import PermissionsMixin
 
@@ -37,7 +37,7 @@ class User(AbstractBaseUser, PermissionsMixin):
     USERNAME_FIELD = "email"
     REQUIRED_FIELDS = ["first_name", 'last_name']
 
-    def str(self):
+    def __str__(self):
         return self.email
 
     def has_module_perms(self, app_label):
